@@ -1,13 +1,10 @@
 package com.equipment.controller;
 
 import com.equipment.model.dto.BorrowListDTO;
-import com.equipment.model.dto.EquipmentDTO;
-import com.equipment.model.dto.PageDTO;
-import com.equipment.model.po.Equipment;
+import com.equipment.model.dto.EquipmentBorrowDTO;
 import com.equipment.model.po.EquipmentBorrow;
 import com.equipment.model.service.IEquipmentBorrowService;
 import io.swagger.annotations.Api;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -46,8 +43,8 @@ public class EquipmentBorrowController {
     }
 
     @PostMapping("saveOrUpdateEquipmentBorrow")
-    public Boolean saveOrUpdateEquipment(@RequestBody EquipmentDTO dto) {
-        Equipment equipment = new Equipment();
+    public Boolean saveOrUpdateEquipment(@RequestBody EquipmentBorrowDTO dto) {
+        EquipmentBorrow equipment = new EquipmentBorrow();
         BeanUtils.copyProperties(dto, equipment);
         return equipmentBorrowService.updateById(equipment);
     }
