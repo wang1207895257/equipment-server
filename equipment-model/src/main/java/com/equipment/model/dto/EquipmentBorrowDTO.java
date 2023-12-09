@@ -1,18 +1,14 @@
-package com.equipment.model.po;
+package com.equipment.model.dto;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.Date;
 
 /**
  * equipment_borrow
  */
-@Getter
-@Setter
-@TableName("equipment_borrow")
-public class EquipmentBorrow {
+@Data
+public class EquipmentBorrowDTO {
     /**
      * 主键id
      */
